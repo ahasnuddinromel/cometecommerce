@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Models\ProductInfo;
+use App\Models\ProductModel;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -68,7 +69,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {  
-        $cart_pro = ProductInfo::find($id);
+        $cart_pro = ProductModel::find($id);
         return view('frontend.cart', [
                 'cart_pro' => $cart_pro
             ]);           

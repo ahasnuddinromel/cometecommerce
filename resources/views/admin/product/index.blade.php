@@ -52,7 +52,7 @@
                                                 </div>--}}
                                             </td>
                                             <td  class="text-right">                                             
-                                              <a class="btn btn-sm btn-warning edit_product" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                              <a class="btn btn-sm btn-warning" href="{{ route('product.edit',  $pro-> id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                               <form style="display: inline-block" action="{{route('product.destroy', $pro -> id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')

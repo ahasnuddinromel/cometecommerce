@@ -10,7 +10,7 @@
 	<!-- Page Wrapper -->  
 
     <div class="card-body">
-        <form action="{{ route('product.update', $id ) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('product.update', $single -> id ) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">
@@ -20,13 +20,13 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Product Id</label>
                         <div class="col-lg-9">
-                            <input name="pid" type="text" class="form-control" value="{{ $pid}}">
+                            <input name="pid" type="text" class="form-control" value="{{ $single -> pid}}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Product Name</label>
                         <div class="col-lg-9">
-                            <input name="pname" type="text" class="form-control" value="{{ $pname}}">
+                            <input name="pname" type="text" class="form-control" value="{{ $single -> pname}}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -75,7 +75,7 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Quantity</label>
                         <div class="col-lg-9">
-                            <input name="quantity" type="text" class="form-control" value="{{ $quantity}}">
+                            <input name="quantity" type="text" class="form-control" value="{{ $single -> quantity}}">
                         </div>
                     </div>
                     <div class="form-group row">                            
@@ -106,27 +106,27 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Product Discription</label>
                         <div class="col-lg-9">
-                            <textarea id="discription_editor" name="product_discription" value="{{ $product_discription}}" ></textarea>
+                            <textarea id="discription_editor" name="product_discription" value="{{ $single -> product_discription}}" ></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Tread Price</label>
                         <div class="col-lg-9">
-                            <input name="tp" type="text" class="form-control" value="{{ $tp}}" >
+                            <input name="tp" type="text" class="form-control" value="{{ $single -> tp}}" >
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Sell Price</label>
                         <div class="col-lg-9">
-                            <input name="sp" type="text" class="form-control"value="{{ $sp}}" >
+                            <input name="sp" type="text" class="form-control"value="{{ $single -> sp}}" >
                         </div>
                     </div> 
-                    {{--<div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Single Image</label>
                         <div class="col-lg-9">
                             <img style="width: 150px" id="edit_product_img_load" src="" alt="">
-                            <img style="width: 150px" src="{{ asset(public_path('images/product/', $photo)) }}" alt="">
-                            <label for="edit_product_img_select"><img style="width:100px; cursor:pointer;" src="{{ URL::to('images/single.png') }}" alt=""></label>
+                            {{--<img style="width: 150px" src="{{ URL::to('frontend/assets/images/product/', $single -> photo)}}" alt="">--}}
+                            <label for="edit_product_img_select"><img style="width:100px; cursor:pointer;" src="{{ URL::to('frontend/assets/images/single.png') }}" alt=""></label>
                             <input style="display:none" id="edit_product_img_select" name="new_photo" type="file" class="form-control">
                         </div>
                     </div>
@@ -135,13 +135,14 @@
                         <div class="col-lg-9">
                            
                             <div class="edit-post-multi-imges"> </div>
-                            @foreach ($multi_photo as $item)
-                                    <img style="width: 150px" src="{{ asset(public_path('images/product/', $item)) }}" alt="">
-                            @endforeach                            
-                            <label for="edit_multi_img_select"><img style="width:100px; cursor:pointer;" src="{{ URL::to('images/multipal.png') }}" alt=""></label>                          
+                            {{--@foreach (json_decode($single -> multi_photo) as $item)
+                                    <img style="width: 150px" src="{{ URL::to('frontend/assets/images/product/', $item)}}" alt="">
+                            @endforeach --}}
+                            <br>                           
+                            <label for="edit_multi_img_select"><img style="width:100px; cursor:pointer;" src="{{ URL::to('frontend/assets/images/multipal.png') }}" alt=""></label>                          
                             <input style="display:none" name="new_multi_photo[]" type="file"  id="edit_multi_img_select" class="form-control" multiple>
                         </div>
-                    </div>--}}
+                    </div>
                 </div> 
             </div>
             <div class="text-right">

@@ -22,14 +22,14 @@
       <div class="search-form">
         <form action="#" class="inline-form">
           <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn"><button type="button" class="btn btn-color"><span><i class="ti-search"></i></span>
-            </button>
+            <input type="text" placeholder="Search" class="form-control">
+            <span class="input-group-btn"><button type="button" class="btn btn-color"><span><i class="ti-search"></i></span></button>
             </span>
           </div>
         </form>
       </div>
     </div>
-    <!-- End search form-->
+    <!-- End search form-->    
   </div>
   <div class="menu-item">
     <!-- Mobile menu toggle-->

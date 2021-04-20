@@ -98,8 +98,6 @@ class SubCatagoryController extends Controller
      */
     public function destroy($id)
     {
-        $delete = SubCatagory::find($id);
-        $delete -> delete();       
-        return redirect() -> route('subcatagory.index') -> with('success', 'Slider Deleted successful');
+        //
     }
 }

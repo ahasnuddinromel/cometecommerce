@@ -43,11 +43,7 @@
                                                 </td>
                                                 <td  class="text-right">                                             
                                                   <a sub_cata_id="{{ $subcata -> id }}" class="btn btn-sm btn-warning edit_product_sub_cata" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                  <form style="display: inline-block" action="{{route('subcatagory.destroy', $subcata -> id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                                </form> 
+                                                 
                                                 </td>
                                             </tr> 
                                             @endforeach

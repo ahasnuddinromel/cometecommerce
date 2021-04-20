@@ -8,7 +8,7 @@
     <ul class="slides">
       @foreach ($slider as $slide)
       <li>
-        <img src="{{ asset('images/slider/') .'/'. $slide -> slider_image }}" alt="">       
+        <img src="{{ URL::to('frontend/assets/images/slider/') .'/'. $slide -> slider_image }}" alt="">       
       </li>
       @endforeach      
     </ul>

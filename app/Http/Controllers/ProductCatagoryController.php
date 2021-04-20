@@ -94,8 +94,6 @@ class ProductCatagoryController extends Controller
      */
     public function destroy($id)
     {
-        $delete = ProductCatagory::find($id);
-        $delete -> delete();       
-        return redirect() -> route('cata.index') -> with('success', 'Catagory Deleted successful');
+       //
     }
 }

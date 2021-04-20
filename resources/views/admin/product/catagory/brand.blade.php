@@ -43,12 +43,7 @@
                                                 </td>
                                                 <td  class="text-right">                                             
                                                   <a brand_id="{{ $brand -> id }}" class="btn btn-sm btn-warning edit_brand" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                  <form style="display: inline-block" action="{{route('brand.destroy', $brand -> id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                                </form> 
-                                                </td>
+                                                 </td>
                                             </tr> 
                                             @endforeach
                                    

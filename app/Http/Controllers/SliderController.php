@@ -42,7 +42,7 @@ class SliderController extends Controller
         if($request-> hasFile('slider_image')){
             $img = $request ->file('slider_image');
             $unique_name = md5(time(). rand()).'.'. $img-> getClientOriginalExtension();
-            $img -> move(public_path('/frontend/assets/images/slider/'), $unique_name);
+            $img -> move(public_path('frontend/assets/images/slider/'), $unique_name);
         }
        Slider::create([
            'slider_title'   => $request -> slider_title,
@@ -97,8 +97,8 @@ class SliderController extends Controller
         if($request -> hasFile('new_slider_image')){
             $img = $request->file('new_slider_image');
             $unique_name = md5(rand().time()).'.'.$img->getClientOriginalExtension();
-            $img -> move(public_path('images/slider/'),  $unique_name);           
-            unlink(public_path('images/slider/' .  $slider_edit->slider_image ));  
+            $img -> move(public_path('frontend/assets/images/slider/'),  $unique_name);           
+            unlink(public_path('frontend/assets/images/slider/' .  $slider_edit->slider_image ));  
         }else{
             $unique_name = $slider_edit -> slider_image;
         }
@@ -121,7 +121,7 @@ class SliderController extends Controller
     {
         $delete = Slider::find($id);
         $delete -> delete();
-        unlink(public_path('images/slider/' .  $delete->slider_image ));  
+        unlink(public_path('frontend/assets/images/slider/' .  $delete->slider_image ));  
         return redirect() -> route('slider.index') -> with('success', 'Slider Deleted successful');
     }
 }

@@ -1,5 +1,5 @@
 @php
-    $trand = App\Models\ProductInfo::latest()->limit(3)->get()
+    $trand = App\Models\ProductModel::latest()->limit(3)->get()
 @endphp
 
 <div class="widget">
